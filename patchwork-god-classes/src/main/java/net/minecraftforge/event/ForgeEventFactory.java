@@ -27,6 +27,7 @@ import net.minecraftforge.eventbus.api.Event;
 
 import net.minecraft.entity.SpawnType;
 import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.loot.LootManager;
 import net.minecraft.loot.LootTable;
@@ -72,5 +73,9 @@ public class ForgeEventFactory {
 
 	public static LootTable loadLootTable(Identifier name, LootTable table, LootManager lootTableManager) {
 		return LootEvents.loadLootTable(name, table, lootTableManager);
+	}
+
+	public static boolean onAnimalTame(AnimalEntity animal, PlayerEntity tamer) {
+		return EntityEvents.onAnimalTame(animal, tamer);
 	}
 }
